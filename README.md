@@ -66,17 +66,19 @@ $$
 Inlet boundary:
 
 $$
-T(z_0) = T_0
-\newline
-\dot{m}_0 Y_{k,0} - j_k(z_0) - \rho(z_0) u(z_0) Y_k(z_0) = 0
+\begin{align*}
+T(z_0) &= T_0\\
+\dot m_0 Y_{k,0} - j_k(z_0) - \rho(z_0) u(z_0) Y_k(z_0) &= 0
+\end{align*}
 $$
 
 Outlet boundary:
 
 $$
-\left.\frac{\partial T}{\partial z}\right|_{z_0} = 0
-\newline
-\left.\frac{\partial Y_k}{\partial z}\right|_{z_0} = 0
+\begin{align*}
+&\frac{\partial T}{\partial z} &= 0\\
+&\frac{\partial Y_k}{\partial z} &= 0
+\end{align*}
 $$
 
 Понятно, что решение, когда ничего не прореагировало тоже подходит под ур. 
