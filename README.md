@@ -32,24 +32,25 @@
 Используем Cantera  https://cantera.org/science/flames.html
 ##### Equations:
 Continuity:
+
 $$
 \frac{\partial \rho u}{\partial x} = 0
 $$
-Energy: 
-$$
 
+Energy: 
+
+$$
 \rho c_p u \frac{\partial T}{\partial z} =
     \frac{\partial}{\partial z}\left(\lambda \frac{\partial T}{\partial z}\right)
     - \sum_k j_k \frac{\partial h_k}{\partial z}
     - \sum_k h_k W_k \dot{\omega}_k
-  
-$$
-Species:
 $$
 
+Species:
+
+$$
 \rho u \frac{\partial Y_k}{\partial z} = - \frac{\partial j_k}{\partial z}
     + W_k \dot{\omega}_k
-
 $$
 
 Diffusive Fluxes:
@@ -57,7 +58,6 @@ Diffusive Fluxes:
 $$
 j_k = \frac{\rho W_k}{\overline{W}^2} \sum_i W_i D_{ki} \frac{\partial X_i}{\partial z}
       - \frac{D_k^T}{T} \frac{\partial T}{\partial z}
-
 $$
 
 
@@ -77,12 +77,11 @@ $$
 \left.\frac{\partial T}{\partial z}\right|_{z_0} = 0
 \\
 \left.\frac{\partial Y_k}{\partial z}\right|_{z_0} = 0
-
 $$
 
 Понятно, что решение, когда ничего не прореагировало тоже подходит под ур. 
 Решение с пламянем получаем т к начально предположение = состоянию равновесия смеси исходной (на inlet) .
 
- $  \dot{\omega}_k $ Получаем из мехнизма реакции.
+$\dot{\omega}_k$ Получаем из мехнизма реакции.
 
 см. [Мехнизмы химической реакции](physics/chemistry/MECHs.md)
