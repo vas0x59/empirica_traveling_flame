@@ -76,8 +76,8 @@ Outlet boundary:
 
 $$
 \begin{align*}
-&\frac{\partial T}{\partial z} &= 0\\
-&\frac{\partial Y_k}{\partial z} &= 0
+&\frac{\partial T}{\partial z}\bigg\rvert_{z_0} &= 0\\
+&\frac{\partial Y_k}{\partial z}\bigg\rvert_{z_0} &= 0
 \end{align*}
 $$
 
