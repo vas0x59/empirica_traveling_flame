@@ -31,10 +31,16 @@
 #### 3. Решаем в системе отсчета закрепленной за пламенем в 1D
 Используем Cantera  https://cantera.org/science/flames.html
 ##### Equations:
+$$
+P(z)\ = P_{atm}
+
+$$
+
+
 Continuity:
 
 $$
-\frac{\partial \rho u}{\partial x} = 0
+\frac{\partial \rho u}{\partial z} = 0
 $$
 
 Energy: 
@@ -76,8 +82,8 @@ Outlet boundary:
 
 $$
 \begin{align*}
-&\frac{\partial T}{\partial z}\bigg\rvert_{z_0} &= 0\\
-&\frac{\partial Y_k}{\partial z}\bigg\rvert_{z_0} &= 0
+&\frac{\partial T}{\partial z}\bigg\rvert_{l} &= 0\\
+&\frac{\partial Y_k}{\partial z}\bigg\rvert_{l} &= 0
 \end{align*}
 $$
 
@@ -87,3 +93,40 @@ $$
 $\dot{\omega}_k$ Получаем из мехнизма реакции.
 
 см. [Мехнизмы химической реакции](physics/chemistry/MECHs.md)
+
+
+
+$$
+s_{L} = s_{L}(T_0, P_{atm}, Y_F, Y_{O2}, Y_{N2})
+
+$$
+
+
+
+## Форма переднего фронта
+
+$$
+s_{L} (z) = v \cdot \vec n_x 
+$$
+
+$$
+x = f(z)
+$$
+
+$$ 
+s_{L} (z) = v \cdot ((f')^2 + 1)^{-1/2}
+$$
+
+$$
+
+$$
+## диффузия
+
+$$
+\nabla (D \nabla Y_F)= 0
+$$
+
+$$
+\rho u \frac{\partial Y_k}{\partial z} = - \frac{\partial j_k}{\partial z}
+    % + W_k \dot{\omega}_k
+$$
