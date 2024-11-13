@@ -51,6 +51,7 @@ Darwin*
 
 #exclude important folders and files:
 !0/
+!0.orig/
 !constant/thermophysicalProperties
 !constant/turbulenceProperties
 !system/
