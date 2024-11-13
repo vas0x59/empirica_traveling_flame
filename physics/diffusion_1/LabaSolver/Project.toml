@@ -1,0 +1,12 @@
+name = "LabaSolver"
+uuid = "ea6b13f3-bc43-44b4-ba40-93daa8c95872"
+authors = ["vas0x59 <vasily.yuryev.a1@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Gridap = "56d4f2e9-7ea1-5844-9cf6-b9c51ca7ce8e"
+GridapGmsh = "3025c34a-b394-11e9-2a55-3fee550c04c8"
+
+[compat]
+Gridap = "0.18.6"
+GridapGmsh = "0.7.2"

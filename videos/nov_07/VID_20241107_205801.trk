@@ -4,8 +4,8 @@
     <property name="width" type="double">1920.0</property>
     <property name="height" type="double">1080.0</property>
     <property name="magnification" type="double">-1.0</property>
-    <property name="center_x" type="int">598</property>
-    <property name="center_y" type="int">484</property>
+    <property name="center_x" type="int">894</property>
+    <property name="center_y" type="int">749</property>
     <property name="videoclip" type="object">
     <object class="org.opensourcephysics.media.core.VideoClip">
         <property name="video" type="object">
@@ -33,7 +33,7 @@
     <object class="org.opensourcephysics.media.core.StepperClipControl">
         <property name="rate" type="double">1.0</property>
         <property name="delta_t" type="double">4.166666666666667</property>
-        <property name="frame" type="int">663</property>
+        <property name="frame" type="int">1460</property>
     </object>
     </property>
     <property name="coords" type="object">
@@ -47,7 +47,7 @@
             <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
                 <property name="xorigin" type="double">229.3734335839599</property>
                 <property name="yorigin" type="double">536.7919799498748</property>
-                <property name="angle" type="double">0.228876730033646</property>
+                <property name="angle" type="double">0.22887673003364603</property>
                 <property name="xscale" type="double">4837.847401230356</property>
                 <property name="yscale" type="double">4837.847401230356</property>
             </object>
@@ -1278,7 +1278,7 @@
             <property name="worldX1" type="double">1107.5689223057645</property>
             <property name="worldY1" type="double">-295.18796992481214</property>
             <property name="world_coordinates" type="array" class="[[D">
-                <property name="array" type="string">{{-82.6065162907268,-309.62406015037607,1107.5689223057645,-295.18796992481214},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null}</property>
+                <property name="array" type="string">{{-82.6065162907268,-309.62406015037607,1107.5689223057645,-295.18796992481214},null,null,null,null}</property>
             </property>
             <property name="axes" type="string">XY</property>
         </object>
@@ -1330,7 +1330,7 @@
             <property name="footprint" type="string">Footprint.Outline</property>
             <property name="visible" type="boolean">true</property>
             <property name="trail" type="boolean">false</property>
-            <property name="spread" type="int">0</property>
+            <property name="spread" type="int">20</property>
             <property name="fixed" type="boolean">true</property>
             <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.LineProfile$FrameData;">
                 <property name="[0]" type="object">
@@ -1346,9 +1346,9 @@
         </object>
         </property>
     </property>
-    <property name="selectedtrack" type="string">mass B</property>
+    <property name="selectedtrack" type="string">profile A</property>
     <property name="dividers" type="array" class="[D">
-        <property name="array" type="string">{0.6488673139158576,0.5414258188824663,1.0,0.22869471413160733}</property>
+        <property name="array" type="string">{0.6487170220455367,0.5417463352453792,1.0,0.22840621611853992}</property>
     </property>
     <property name="views" type="array" class="[[Lorg.opensourcephysics.cabrillo.tracker.TView;">
         <property name="[0]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
@@ -1356,20 +1356,6 @@
             <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
                 <property name="selected_track" type="string">profile A</property>
                 <property name="track_views" type="collection" class="java.util.ArrayList">
-                    <property name="item" type="object">
-                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
-                        <property name="track" type="string">mass B</property>
-                        <property name="plot0" type="object">
-                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
-                            <property name="x_var" type="string">t</property>
-                            <property name="y_var" type="string">x</property>
-                            <property name="lines" type="boolean">true</property>
-                            <property name="points" type="boolean">true</property>
-                        </object>
-                        </property>
-                        <property name="linked" type="boolean">true</property>
-                    </object>
-                    </property>
                     <property name="item" type="object">
                     <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
                         <property name="track" type="string">profile A</property>
@@ -1411,6 +1397,20 @@
                         <property name="linked" type="boolean">false</property>
                     </object>
                     </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">mass B</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                            <property name="lines" type="boolean">true</property>
+                            <property name="points" type="boolean">true</property>
+                        </object>
+                        </property>
+                        <property name="linked" type="boolean">true</property>
+                    </object>
+                    </property>
                 </property>
             </object>
             </property>
@@ -1422,10 +1422,6 @@
                 <property name="track_columns" type="array" class="[[Ljava.lang.String;">
                     <property name="[0]" type="array" class="[Ljava.lang.String;">
                         <property name="[0]" type="string">profile A</property>
-                        <property name="[1]" type="string">n</property>
-                        <property name="[2]" type="string">x</property>
-                        <property name="[3]" type="string">y</property>
-                        <property name="[4]" type="string">luma</property>
                     </property>
                 </property>
                 <property name="column_formats" type="array" class="[[[Ljava.lang.String;">
