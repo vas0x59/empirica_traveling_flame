@@ -8,7 +8,7 @@ file = 'mechanisms/marinov_ethanol/ethanol-marinov.yaml'
 # colours = ["xkcd:grey",'xkcd:purple']
 Tin = 293  # unburned gas temperature [K]
 p=760  # pressure [torr]
-n=3 # number of points to simulate
+n=2 # number of points to simulate
 phi_list = np.linspace(0.5,1,n) # equivalence ratios to simulate across
 # for k, m in enumerate(models):
 vel_list = []
@@ -39,4 +39,29 @@ ax.plot(P_e, vel_list)
 ax.legend(frameon=False, loc='upper right')
 ax.set_ylabel(r'Burning velocity [cm $\rm s^{-1}$]')
 ax.set_xlabel(r'Equivalence Ratio')
+
+# fig, ax = plt.subplots()
+fig, ax1 = plt.subplots()
+
+color = 'tab:green'
+ax1.set_xlabel('z, m')
+ax1.set_ylabel('T, K', color=color)
+ax1.plot(f.grid, f.T, color=color)
+# ax1.plot(t_D, tvec6[:, 0], color="tab:orange")
+ax1.tick_params(axis='y', labelcolor=color)
+
+ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+
+color = 'tab:blue'
+ax2.set_ylabel('sync', color=color)  # we already handled the x-label with ax1
+# for 
+ax2.plot(f.grid, sync_D, color=color)
+ax2.tick_params(axis='y', labelcolor=color)
+
+
+ax.plot(f.grid, f.T)
+ax.plot(f.grid, f.T)
+
 plt.show()
+
+
