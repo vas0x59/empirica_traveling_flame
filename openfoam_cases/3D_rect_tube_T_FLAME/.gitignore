@@ -2,7 +2,7 @@
 ### OpenFOAM ###
 # Timestep directories
 0.*
-[1-9]*
+[0-9]*
 
 # Fields that must get ignored
 */phi*
