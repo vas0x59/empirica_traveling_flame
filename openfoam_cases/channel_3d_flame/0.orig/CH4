@@ -18,12 +18,21 @@ dimensions      [0 0 0 0 0 0 0];
 
 internalField   uniform 0.0;
 
+// #include 
+
+#include "../system/setExprFieldsDictConsts"
+F_down $constants.F_down;
+
 boundaryField
 {
-    "(wall|liquid|start|end).*.*"
+    "(wall|start|end).*.*"
     {
         type            zeroGradient;
         // value           uniform 0.0;
+    }
+    liquid {
+        type fixedValue;
+        value uniform $F_down;
     }
 
     "(air).*"

@@ -24,23 +24,23 @@ defaultFieldValues
 
 regions
 (
-    boxToCell
-    {
-        box (-1 -1 -1) (1 0 1);
-        fieldValues
-        (
-            // volScalarFieldValue p 1e5
+    // boxToCell
+    // {
+    //     box (-1 -1 -1) (1 0 1);
+    //     fieldValues
+    //     (
+    //         // volScalarFieldValue p 1e5
             
-            volScalarFieldValue CH4 0.1
-            volScalarFieldValue O2 0.18
+    //         volScalarFieldValue CH4 0.1
+    //         volScalarFieldValue O2 0.18
 
-            volScalarFieldValue N2 0.72
-            // volScalarFieldValue H2O 0.30
+    //         volScalarFieldValue N2 0.72
+    //         // volScalarFieldValue H2O 0.30
 
 
-            // volScalarFieldValue T 2000
-        );
-    }
+    //         // volScalarFieldValue T 2000
+    //     );
+    // }
     boxToCell
     {
         box (-0.003 -0.045 0.004) (0.003 -0.040 0.008);
@@ -48,10 +48,10 @@ regions
         (
             // volScalarFieldValue p 1e5
             
-            volScalarFieldValue CH4 0.1
-            volScalarFieldValue O2 0.18
+            // volScalarFieldValue CH4 0.1
+            // volScalarFieldValue O2 0.18
 
-            volScalarFieldValue N2 0.72
+            // volScalarFieldValue N2 0.72
             // volScalarFieldValue H2O 0.30
 
 

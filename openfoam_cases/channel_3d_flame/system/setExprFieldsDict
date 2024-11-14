@@ -1,0 +1,76 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      setExprFieldsDict;
+}
+
+
+// #include "setExprFieldsDictConsts"
+
+expressions (
+    CH4 {
+        field CH4;
+        
+        // constants {
+        //     // depth 0.05;
+        // }
+        // constants $defaultconstants;
+
+#include "setExprFieldsDictConsts"
+
+        condition
+        #{
+            pos().y() < 0
+        #};
+
+        expression
+        #{
+            // 0.01 * (1-($[(scalar)constants.depth] + pos().y())/$[(scalar)constants.depth])
+            $[(scalar)constants.F_down] * (1-($[(scalar)constants.depth] + pos().y())/$[(scalar)constants.depth])
+        #};
+    }
+    O2 {
+        field O2;
+        
+        // constants {
+        //     // depth 0.05;
+        //     #include "setExprFieldsDictConsts"
+        // }
+        // constants $defaultconstants;
+#include "setExprFieldsDictConsts"
+
+        condition
+        #{
+            pos().y() < 0
+        #};
+
+        expression
+        #{
+            // 0.3*(1.0-0.01*(1-($[(scalar)constants.depth] + pos().y())/$[(scalar)constants.depth]) )
+            $[(scalar)constants.O2_up]*(1.0-$[(scalar)constants.F_down]*(1-($[(scalar)constants.depth] + pos().y())/$[(scalar)constants.depth]) )
+        #};
+    }
+    N2 {
+        field N2;
+        
+        // constants {
+        //     // depth 0.05;
+        //     #include "setExprFieldsDictConsts"
+        // }
+        // constants $defaultconstants;
+#include "setExprFieldsDictConsts"
+
+        condition
+        #{
+            pos().y() < 0
+        #};
+
+        expression
+        #{
+            // 0.7*(1.0-0.01*(1-($[(scalar)constants.depth] + pos().y())/$[(scalar)constants.depth]) )
+            $[(scalar)constants.N2_up]*(1.0-$[(scalar)constants.F_down]*(1-($[(scalar)constants.depth] + pos().y())/$[(scalar)constants.depth]) )
+        #};
+    }
+);

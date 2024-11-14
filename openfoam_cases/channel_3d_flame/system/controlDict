@@ -22,13 +22,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         0.1;
+endTime         0.004;
 
-deltaT          0.6e-7;
+deltaT          0.2e-8;
 
 writeControl    adjustable;
 
-writeInterval   0.00001;
+writeInterval   0.00002;
 
 purgeWrite      0;
 
@@ -46,11 +46,33 @@ runTimeModifiable true;
 
 adjustTimeStep  yes;
 
-maxCo           0.22;
+maxCo           0.4;
+
 
 functions
 {
     #include "FOBilgerMixtureFraction"
+    // add1
+    // {
+    //     // Mandatory entries    (unmodifiable)
+    //     type            add;
+    //     libs            (fieldFunctionObjects);
+
+    //     // Mandatory (inherited) entries    (runtime modifiable)
+    //     fields          (CH4 N2 O2);
+
+    //     // // Optional (inherited) entries
+    //     // result          <fieldResult>;
+    //     // region          region0;
+    //     // enabled         true;
+    //     // log             true;
+    //     // timeStart       0;
+    //     // timeEnd         1000;
+    //     // executeControl  timeStep;
+    //     // executeInterval 1;
+    //     // writeControl    timeStep;
+    //     // writeInterval   1;
+    // }
 }
 
 
