@@ -1,0 +1,46 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      setFieldsDict;
+    version 2.0;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+defaultFieldValues
+(
+    // volScalarFieldValue p 1e5
+    // volScalarFieldValue T 300
+    // volScalarFieldValue N2 0.35
+    // volScalarFieldValue CH4 0.5
+    // volScalarFieldValue O2 0.15
+
+
+    // volScalarFieldValue CO2 0.0
+    // volScalarFieldValue H2O 0.0
+    
+
+);
+
+regions
+(
+    boxToCell
+    {
+        // box (0.0001 -0.009 -0.009) (0.01 0.009 0.009);
+        box (0.0001 -0.01 -0.01) (0.01 0.01 0.01);  
+        fieldValues
+        (
+            // volScalarFieldValue p 1e5
+            
+            // volScalarFieldValue CH4 0
+            // volScalarFieldValue O2 0
+
+            // volScalarFieldValue CO2 0.35
+            // volScalarFieldValue H2O 0.30
+
+
+            volScalarFieldValue T 2000
+        );
+    }
+);
