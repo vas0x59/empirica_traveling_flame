@@ -2,7 +2,8 @@ import gmsh
 import numpy as np
 
 import enum 
-
+import os
+import sys
 
 
 def gmsh_generate_domain(d_w, d_h, c_w, c_h, w_w, a, s1=0.25*1e-3):
@@ -86,6 +87,7 @@ if __name__ == "__main__":
     gmsh.initialize()
 
     model = gmsh_generate_domain(d_w=0.2, d_h=0.2, c_h=5e-3, c_w=5e-3, w_w=1e-3, a=3e-3)
+    os.makedirs("workdir", exist_ok=True)
     gmsh.write(f"workdir/mesh.msh")
 
     gmsh.fltk.run()
