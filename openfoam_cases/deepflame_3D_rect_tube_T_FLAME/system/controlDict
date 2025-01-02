@@ -33,25 +33,25 @@ deltaT          1e-7;
 
 writeControl    adjustableRunTime;
 
-writeInterval   1e-4;
+writeInterval   1e-5;
 
 purgeWrite      0;
 
 writeFormat     ascii;
 
-writePrecision    6;
+writePrecision    7;
 
 writeCompression off;
 
 timeFormat      general;
 
-timePrecision   6;
+timePrecision   7;
 
 runTimeModifiable true;
 
 adjustTimeStep yes;
 
-maxCo  0.4;
+maxCo  0.6;
 
 // maxDeltaT 1e-3;
 

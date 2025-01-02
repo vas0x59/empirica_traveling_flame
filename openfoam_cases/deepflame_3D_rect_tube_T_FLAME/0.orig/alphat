@@ -20,13 +20,12 @@ internalField   uniform 0;
 
 boundaryField
 {
-    in
-    {
-        type            fixedValue;
-        value           uniform 0;
-    }
+    // X0
+    // {
+    //     type            zeroGradient;
+    // }
 
-    out
+    XL
     {
         type            zeroGradient;
     }
@@ -34,6 +33,11 @@ boundaryField
     border
     {
         type            zeroGradient;
+    }
+
+    "(sym).*"
+    {
+        type            symmetryPlane;
     }
 }
 

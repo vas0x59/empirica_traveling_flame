@@ -23,4 +23,4 @@ cp -r 0.orig/ 0/
 runApplication blockMesh
 runApplication setFields
 runApplication decomposePar
-runApplication mpirun -np 4 --allow-run-as-root $application -parallel
+runApplication mpirun -np 8 --allow-run-as-root $application -parallel

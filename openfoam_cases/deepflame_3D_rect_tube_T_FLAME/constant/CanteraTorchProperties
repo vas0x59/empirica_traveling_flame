@@ -39,7 +39,7 @@ TorchSettings
 loadbalancing
 {
     active           true;
-    log              false;
+    log              true;
     algorithm        allAverage;//headTail;
 }
 
