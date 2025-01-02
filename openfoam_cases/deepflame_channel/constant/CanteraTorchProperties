@@ -1,0 +1,47 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version          2.0;
+    format           ascii;
+    class            dictionary;
+    location         "constant";
+    object           CanteraTorchProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+chemistry            on;
+
+CanteraMechanismFile "./constant/ethanol66.yaml";
+
+transportModel       "Mix";
+
+odeCoeffs
+{
+    "relTol"         2e-6;
+    "absTol"         2e-9;
+}
+
+inertSpecie          "N2";
+
+splittingStrategy    off;
+
+TorchSettings
+{
+    torch            off;
+}
+
+loadbalancing
+{
+    active           true;
+    log              true;
+    algorithm        allAverage;//headTail;
+}
+
+
+// ************************************************************************* //
