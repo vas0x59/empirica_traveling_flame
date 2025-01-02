@@ -9,7 +9,7 @@
 constants {
 
     depth 0.05;
-    F_down 0.2;
+    F_down 0.07;
     N2_up 0.7;
     O2_up 0.3;
 }
