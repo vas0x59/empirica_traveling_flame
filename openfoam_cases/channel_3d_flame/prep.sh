@@ -9,6 +9,9 @@ gmshToFoam mesh.msh
 
 python3 ../../utils/modify_mesh_boundary.py ./constant/polyMesh/boundary "liquid start end"
 
+# setFields
+setExprFields
+
 setFields
 
 decomposePar

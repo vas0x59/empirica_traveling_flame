@@ -10,18 +10,26 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    object      decomposeParDict;
+    object      thermophysicalProperties;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains  4;
-
-method          hierarchical;
-
-coeffs
+thermoType
 {
-    n           (1 2 2);
+    type            hePsiThermo;
+    mixture         reactingMixture;
+    transport       sutherland;
+    thermo          janaf;
+    energy          sensibleEnthalpy;
+    equationOfState perfectGas;
+    specie          specie;
 }
+
+inertSpecie N2;
+
+chemistryReader foamChemistryReader;
+foamChemistryFile "<constant>/reactionsGRI";
+foamChemistryThermoFile "<constant>/thermo.compressibleGasGRI";
 
 
 // ************************************************************************* //

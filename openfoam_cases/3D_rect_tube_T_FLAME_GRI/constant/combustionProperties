@@ -10,17 +10,16 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    object      decomposeParDict;
+    object      combustionProperties;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains  4;
+combustionModel  laminar;
 
-method          hierarchical;
+active  true;
 
-coeffs
+laminarCoeffs
 {
-    n           (1 2 2);
 }
 
 

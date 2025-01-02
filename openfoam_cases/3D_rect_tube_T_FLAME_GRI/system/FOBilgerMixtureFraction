@@ -5,42 +5,41 @@
 |   \\  /    A nd           | Website:  www.openfoam.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-FoamFile
+
+BilgerMixtureFraction1
 {
-    version     2.0;
-    format      ascii;
-    class       volScalarField;
-    object      CH4;
-}
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+    // Mandatory entries
+    type            BilgerMixtureFraction;
+    libs            (fieldFunctionObjects);
 
-dimensions      [0 0 0 0 0 0 0];
-
-internalField   uniform 0.0;
-
-// #include 
-
-#include "../system/setExprFieldsDictConsts"
-F_down $constants.F_down;
-
-boundaryField
-{
-    "(wall|start|end).*.*"
+    fuel
     {
-        type            zeroGradient;
-        // value           uniform 0.0;
-    }
-    liquid {
-        type fixedValue;
-        value uniform $F_down;
+        composition moleFractions;
+        CH4         1;
     }
 
-    "(air).*"
+    oxidiser
     {
-        type            inletOutlet;
-        inletValue      $internalField;
-        value           $internalField;
+        composition massFractions;
+        O2          0.23;
+        N2          0.77;
     }
+
+
+    // Optional entries
+    //phase           "";
+    result          f_Bilger;
+
+    // Optional (inherited) entries
+    region          region0;
+    enabled         true;
+    log             true;
+    timeStart       0;
+    timeEnd         1000;
+    executeControl  timeStep;
+    executeInterval 1;
+    writeControl    writeTime;
+    writeInterval   -1;
 }
 
 

@@ -10,18 +10,11 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    object      decomposeParDict;
+    object      turbulenceProperties;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains  4;
-
-method          hierarchical;
-
-coeffs
-{
-    n           (1 2 2);
-}
+simulationType  laminar;
 
 
 // ************************************************************************* //

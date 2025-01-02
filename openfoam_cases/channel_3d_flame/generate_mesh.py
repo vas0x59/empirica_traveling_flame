@@ -6,7 +6,7 @@ import os
 import sys
 import math
 
-def gmsh_generate_domain(d_w, d_h, c_w, c_h, l, l_cnt, s1=3):
+def gmsh_generate_domain(d_w, d_h, c_w, c_h, l, l_cnt, s1=1):
     BC_L = 1
     BC_W = 2
     BC_A = 3
@@ -53,7 +53,7 @@ def gmsh_generate_domain(d_w, d_h, c_w, c_h, l, l_cnt, s1=3):
         lines_cc.append(model.geo.addLine(points_cc[j], points_cc[i]))
     
     
-    C_c_hor = int(30)
+    C_c_hor = int(12)
     for i in [0, 2]:
         model.geo.mesh.setTransfiniteCurve(lines_cc[i] , C_c_hor)# b. t
     for i in [1, 3]:
@@ -180,7 +180,7 @@ def gmsh_generate_domain(d_w, d_h, c_w, c_h, l, l_cnt, s1=3):
 if __name__ == "__main__":
     gmsh.initialize()
 
-    model = gmsh_generate_domain(d_w=0.02, d_h=0.05, c_w=10e-3,c_h=50e-3, l = 0.2, l_cnt = 200)
+    model = gmsh_generate_domain(d_w=0.02, d_h=0.05, c_w=10e-3,c_h=50e-3, l = 0.2, l_cnt = 100)
     # os.makedirs("workdir", exist_ok=True)
     gmsh.write(f"mesh.msh")
     if "-nopopup" not in sys.argv:
