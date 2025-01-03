@@ -16,7 +16,7 @@ FoamFile
 
 dimensions      [0 0 0 1 0 0 0];
 
-internalField   uniform 300;
+internalField   uniform 293;
 
 boundaryField
 {
@@ -35,8 +35,14 @@ boundaryField
 
     "(border).*"
     {
-        type            zeroGradient;
-        // value           uniform 293;
+        // type            zeroGradient;
+        type            externalWallHeatFluxTemperature;
+        mode coefficient;
+        h uniform 10;
+        Ta constant 293;
+        thicknessLayers (0.003); // orgsteklo
+        kappaLayers     (0.3);
+        value           uniform 293;
     }
 
     "(sym).*"

@@ -95,8 +95,8 @@ PIMPLE
     correctPhi yes;
     // checkMeshCourantNo yes;
     nOuterCorrectors  1;
-    nCorrectors     2;
-    nNonOrthogonalCorrectors 0;
+    nCorrectors     3;
+    nNonOrthogonalCorrectors 1;
 }
 
 

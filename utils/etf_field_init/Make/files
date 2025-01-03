@@ -1,0 +1,3 @@
+etf_field_init.C
+
+EXE = $(FOAM_APPBIN)/etf_field_init
