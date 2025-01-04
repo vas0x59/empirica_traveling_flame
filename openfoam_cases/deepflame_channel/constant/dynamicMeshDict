@@ -34,17 +34,17 @@ dynamicFvMesh   dynamicRefineFvMesh;
  //   minLevel 0.01;
 //    maxLevel 0.99;
 
-    lowerRefineLevel 0.21;
+    lowerRefineLevel 0.27;
     upperRefineLevel 1;
 
     // If value < unrefineLevel unrefine
-    unrefineLevel   0.025;
+    unrefineLevel   0.019;
 
     // Have slower than 2:1 refinement
     nBufferLayers   2;
 
     // Refine cells only up to maxRefinement levels
-    maxRefinement  1;
+    maxRefinement  2;
 
     // Stop refinement if maxCells reached
     maxCells        160000;

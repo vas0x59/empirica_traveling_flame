@@ -3,4 +3,4 @@
 
 application=dfLowMachFoam
 
-runApplication mpirun -np 8 --allow-run-as-root $application -parallel
+runApplication mpirun -np 10 --allow-run-as-root $application -parallel

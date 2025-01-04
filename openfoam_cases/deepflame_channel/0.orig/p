@@ -30,11 +30,19 @@ boundaryField
     XL
     {
         // type            zeroGradient;
-        type            advective;
+        // type            advective;
         // type totalPressure;
         // p0              uniform 100000;
         // inletValue      $internalField;
         // value           $internalField;
+
+        type            waveTransmissive;
+        field           p;
+        pis             thermo:psi;
+        gamma           1.4;
+        fieldInf        1e5;
+        lInf            1;
+        value           $internalField;
     }
     "(border).*" {
         type zeroGradient;
