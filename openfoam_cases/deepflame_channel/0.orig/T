@@ -36,7 +36,7 @@ boundaryField
     "(border).*"
     {
         // type            zeroGradient;
-        type            externalWallHeatFluxTemperature;
+        type            externalWallHeatFluxTemperatureNoSolid;
         mode coefficient;
         h uniform 10;
         Ta constant 293;

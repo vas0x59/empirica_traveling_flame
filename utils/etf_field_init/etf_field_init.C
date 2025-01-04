@@ -14,6 +14,8 @@ double Y_air_N2 = 0.75;
 double Y_air_O2 = 0.25;
 double Y_liquid_fuel = 0.07;
 
+double fuel_Z_0 = 0.1;
+
 Ys_t calc_Ys(double z, double maxZ) {
     double t = min(1, max(1 - (z / maxZ), 0));
     Ys_t ys;
@@ -74,18 +76,19 @@ int main(int argc, char *argv[])
     const vectorField& cellCenters = mesh.C();
 
 
-    scalar maxZ = -GREAT;
+    scalar maxZ = 0;
 
 
-    forAll(cellCenters, cellI)
-    {
-        scalar z = cellCenters[cellI].z(); 
+    // forAll(cellCenters, cellI)
+    // {
+    //     scalar z = cellCenters[cellI].z(); 
         
-        maxZ = max(maxZ, z);
-    }
+    //     maxZ = max(maxZ, z);
+    // }
 
-    maxZ *=1.1;
-    Info << "maxZ " << maxZ << " units" << endl;
+    maxZ = fuel_Z_0;
+    
+    // Info << "maxZ " << maxZ << " units" << endl;
 
 
     forAll(cellCenters, cellI)

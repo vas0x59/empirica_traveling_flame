@@ -34,20 +34,20 @@ dynamicFvMesh   dynamicRefineFvMesh;
  //   minLevel 0.01;
 //    maxLevel 0.99;
 
-    lowerRefineLevel 0.15;
+    lowerRefineLevel 0.21;
     upperRefineLevel 1;
 
     // If value < unrefineLevel unrefine
-    unrefineLevel   0.04;
+    unrefineLevel   0.025;
 
     // Have slower than 2:1 refinement
-    nBufferLayers   3;
+    nBufferLayers   2;
 
     // Refine cells only up to maxRefinement levels
-    maxRefinement  2;
+    maxRefinement  1;
 
     // Stop refinement if maxCells reached
-    maxCells        100000;
+    maxCells        160000;
 
     // Flux field and corresponding velocity field. Fluxes on changed
     // faces get recalculated by interpolating the velocity. Use 'none'
