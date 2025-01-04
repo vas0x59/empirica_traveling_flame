@@ -10,9 +10,9 @@ struct Ys_t {
 };
 
 
-double Y_air_N2 = 0.75;
-double Y_air_O2 = 0.25;
-double Y_liquid_fuel = 0.07;
+double Y_air_N2 = 0.767;
+double Y_air_O2 = 0.233;
+double Y_liquid_fuel = 0.09;
 
 double fuel_Z_0 = 0.1;
 
