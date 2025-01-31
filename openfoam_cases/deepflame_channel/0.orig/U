@@ -26,6 +26,11 @@ boundaryField
     //     value           $internalField;
     // }
 
+    top
+    {
+        type            pressureInletOutletVelocity;
+        value           $internalField;
+    }
     XL
     {
         type            pressureInletOutletVelocity;
@@ -33,6 +38,18 @@ boundaryField
     }
 
     "(border).*"
+    {
+        type            zeroGradient;
+        // type            noSlip;
+    }
+    border_0
+    {
+        // type            zeroGradient;
+        type            zeroGradient;
+        // type            pressureInletOutletVelocity;
+        // value           $internalField;
+    }
+    border_liquid
     {
         // type            zeroGradient;
         type            noSlip;

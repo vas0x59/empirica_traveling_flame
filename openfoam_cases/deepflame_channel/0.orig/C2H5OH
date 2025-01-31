@@ -32,7 +32,10 @@ boundaryField
         inletValue      $internalField;
         // value           $internalField;
     }
-    border
+    top {
+        type  zeroGradient;
+    }
+    "(border).*"
     {
         type            zeroGradient;
     }

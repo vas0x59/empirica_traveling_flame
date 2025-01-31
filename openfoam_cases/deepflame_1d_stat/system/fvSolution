@@ -1,0 +1,256 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSolution;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solvers
+{
+    // "rho.*"
+    // {
+    //     solver          diagonal;
+    // }
+
+    // p
+    // {
+    //     solver          GAMG;
+    //     tolerance       1e-8;
+    //     relTol          0.001;
+    //     smoother        GaussSeidel;
+    //     cacheAgglomeration true;
+    //     nCellsInCoarsestLevel 20;
+    //     agglomerator    faceAreaPair;
+    //     mergeLevels     1;
+    // }
+
+    // pFinal
+    // {
+    //     solver          GAMG;
+    //     tolerance       1e-9;
+    //     relTol          0.001;
+    //     smoother        GaussSeidel;
+    //     cacheAgglomeration true;
+    //     nCellsInCoarsestLevel 20;
+    //     agglomerator    faceAreaPair;
+    //     mergeLevels     1;
+    // }
+    // pcorr
+    // {
+    //     $pFinal;
+    //     tolerance       1e-9;
+    //     relTol          0;
+    // }
+    // pcorrFinal
+    // {
+    //     $pFinal;
+    //     tolerance       1e-9;
+    //     relTol          0;
+    // }
+
+    // "(U|ha|k|epsilon)"
+    // {
+    //     solver          PBiCGStab;
+    //     preconditioner  DILU;
+    //     tolerance       1e-8;
+    //     relTol          0.001;
+    // }
+
+    // "(U|ha|k|epsilon)Final"
+    // {
+    //     $U;
+    //     tolerance       1e-8;
+    //     relTol          0;
+    // }
+
+    // "Yi"
+    // {
+    //     solver          PBiCGStab;
+    //     preconditioner  DILU;
+    //     tolerance       1e-8;
+    //     relTol          0.001;
+    // }
+    // "YiFinal"
+    // {
+    //     solver          PBiCGStab;
+    //     preconditioner  DILU;
+    //     tolerance       1e-8;
+    //     relTol          0;
+    // }
+
+    rho
+    {
+        solver          PCG;
+        preconditioner  DIC;
+        tolerance       1e-07;
+        relTol          0.1;
+    }
+
+
+    rhoFinal
+    {
+        $rho;
+        tolerance       1e-09;
+        relTol          0;
+    }
+
+    p
+    {
+        solver          PCG;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            tolerance       1e-08;
+            relTol          0.01;
+            nVcycles        2;
+            smoother        DICGaussSeidel;
+            nPreSweeps      2;
+        }
+        tolerance       1e-08;
+        relTol          0.01;
+         maxIter         100;
+    }
+
+    pFinal
+    {
+        solver          PCG;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            tolerance       2e-09;
+            relTol          0;
+            nVcycles        2;
+            smoother        DICGaussSeidel;
+            nPreSweeps      2;
+        }
+
+        tolerance       1e-09;
+        relTol          0;
+        maxIter         100;
+    }
+
+    p_rgh
+    {
+        solver          PCG;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            tolerance       1e-08;
+            relTol          0.01;
+            nVcycles        2;
+            smoother        DICGaussSeidel;
+            nPreSweeps      2;
+        }
+        tolerance       1e-08;
+        relTol          0.01;
+         maxIter         100;
+    }
+
+    p_rghFinal
+    {
+        solver          PCG;
+        preconditioner
+        {
+            preconditioner  GAMG;
+            tolerance       2e-09;
+            relTol          0;
+            nVcycles        2;
+            smoother        DICGaussSeidel;
+            nPreSweeps      2;
+        }
+
+        tolerance       1e-09;
+        relTol          0;
+        maxIter         100;
+    }
+
+
+    "(U|k|epsilon)"
+    {
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-08;
+        relTol          0;
+    }
+
+    "(U|k|epsilon)Final"
+    {
+        $U;
+        tolerance       1e-09;
+        relTol          0;
+    }
+
+
+    "(he|ha|h|e|Yi)"
+    {
+        solver          PBiCGStab;
+        preconditioner  DILU;
+        tolerance       1e-08;
+        relTol          0;
+    }
+
+    "(he|ha|h|e|Yi)Final"
+    {
+        $he;
+        tolerance       1e-09;
+        relTol          0;
+    }
+}
+
+PIMPLE
+{
+    transonic       no;
+    momentumPredictor on;
+    correctPhi yes;
+    // checkMeshCourantNo yes;
+    nOuterCorrectors  1;
+    nCorrectors     3;
+    nNonOrthogonalCorrectors 0;
+
+     maxDeltaT       1e-2;
+    maxCo           1;
+    alphaTemp       0.05;
+    rDeltaTSmoothingCoeff 1;
+    rDeltaTDampingCoeff 1;
+}
+
+// PIMPLE
+// {
+//     transonic       no;
+//     momentumPredictor on;
+//     correctPhi yes;
+//     // checkMeshCourantNo yes;
+//     nOuterCorrectors  1;
+//     nCorrectors     3;
+//     nNonOrthogonalCorrectors 1;
+// }
+
+// PIMPLE
+// {
+//     transonic       no;
+//     momentumPredictor on;
+//     correctPhi yes;
+//     // checkMeshCourantNo yes;
+//     nOuterCorrectors  1;
+//     nCorrectors     4;
+//     nNonOrthogonalCorrectors 2;
+// }
+
+relaxationFactors
+{
+    equations
+    {
+        ".*Final"       1;
+    }
+}
+// ************************************************************************* //

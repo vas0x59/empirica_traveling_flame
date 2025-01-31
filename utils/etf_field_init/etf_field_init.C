@@ -1,6 +1,8 @@
 #include "fvCFD.H"
 #include "inletOutletFvPatchField.H"
 #include "fixedValueFvPatchField.H"
+#include "Constant.H"
+#include "Uniform.H"
 
 struct Ys_t {
     double Y_fuel_fz;
@@ -14,7 +16,7 @@ double Y_air_N2 = 0.767;
 double Y_air_O2 = 0.233;
 double Y_liquid_fuel = 0.09;
 
-double fuel_Z_0 = 0.1;
+double fuel_Z_0 = 0.048;
 
 Ys_t calc_Ys(double z, double maxZ) {
     double t = min(1, max(1 - (z / maxZ), 0));
@@ -163,16 +165,23 @@ int main(int argc, char *argv[])
             }
             
         }
-        if (patchName == "border_liquid") {
-            std::cout << "border_liquid patchI: " << patchI << std::endl;
-            Foam::dictionary myDict;
-            // Field<scalar> f(patch.size());
-            // f = Y_liquid_fuel;
+        // if (patchName == "border_liquid") {
+        //     std::cout << "border_liquid patchI: " << patchI << std::endl;
+        //     // Foam::dictionary myDict;
+        //     // Field<scalar> f(patch.size());
+        //     // f = Y_liquid_fuel;
             
-            myDict.add("value",Y_liquid_fuel); 
-            auto fvpf = new fixedValueFvPatchField<scalar>(patch, Y_fuel_field, myDict);
-            Y_fuel_field.boundaryFieldRef().set(patchI, fvpf);
-        }
+        //     // myDict.add(Uniform<scalar>("value", Y_liquid_fuel)); 
+
+        //     auto fvpf = new fixedValueFvPatchField<scalar>(patch, Y_fuel_field);
+        //     fvPatchField<scalar> fuel_(patch, Y_fuel_field);
+        //     forAll(patch, faceI) { 
+        //         fuel_[faceI] = Y_liquid_fuel;
+        //     }
+
+        //     (*fvpf) =  fuel_;
+        //     Y_fuel_field.boundaryFieldRef().set(patchI, fvpf);
+        // }
     }
     
     // };

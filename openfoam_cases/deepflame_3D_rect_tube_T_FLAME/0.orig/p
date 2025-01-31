@@ -31,6 +31,8 @@ boundaryField
     {
         // type            zeroGradient;
         type            advective;
+        // type totalPressure;
+        // p0              uniform 100000;
         // inletValue      $internalField;
         // value           $internalField;
     }

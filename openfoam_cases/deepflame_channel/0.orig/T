@@ -26,6 +26,9 @@ boundaryField
     //     inletValue      $internalField;
     //     value           $internalField;
     // }
+    top {
+        type zeroGradient;
+    }
     XL
     {
         type            inletOutlet;
@@ -43,6 +46,10 @@ boundaryField
         thicknessLayers (0.003); // orgsteklo
         kappaLayers     (0.3);
         value           uniform 293;
+    }
+    border_0 
+    {
+        type            zeroGradient;
     }
 
     "(sym).*"

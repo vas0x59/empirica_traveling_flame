@@ -34,11 +34,11 @@ dynamicFvMesh   dynamicRefineFvMesh;
  //   minLevel 0.01;
 //    maxLevel 0.99;
 
-    lowerRefineLevel 0.27;
+    lowerRefineLevel 0.08;
     upperRefineLevel 1;
 
     // If value < unrefineLevel unrefine
-    unrefineLevel   0.019;
+    unrefineLevel   0.01;
 
     // Have slower than 2:1 refinement
     nBufferLayers   2;
@@ -62,7 +62,7 @@ dynamicFvMesh   dynamicRefineFvMesh;
     //     //(neg none)
     //     //(pos none)
     // );
-     correctFluxes ((phi none));
+     correctFluxes ((phi U));
 
     // Write the refinement level as a volScalarField
     dumpLevel       true;

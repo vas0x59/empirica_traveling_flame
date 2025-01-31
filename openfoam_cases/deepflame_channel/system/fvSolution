@@ -52,35 +52,45 @@ solvers
     //     relTol          0;
     // }
 
-    // "(U|ha|k|epsilon)"
+    // pcorrFinal
     // {
-    //     solver          PBiCGStab;
-    //     preconditioner  DILU;
-    //     tolerance       1e-8;
-    //     relTol          0.001;
-    // }
-
-    // "(U|ha|k|epsilon)Final"
-    // {
-    //     $U;
-    //     tolerance       1e-8;
+    //     $pFinal;
+    //     tolerance       1e-9;
     //     relTol          0;
     // }
 
-    // "Yi"
-    // {
-    //     solver          PBiCGStab;
-    //     preconditioner  DILU;
-    //     tolerance       1e-8;
-    //     relTol          0.001;
-    // }
-    // "YiFinal"
-    // {
-    //     solver          PBiCGStab;
-    //     preconditioner  DILU;
-    //     tolerance       1e-8;
-    //     relTol          0;
-    // }
+    "(U|ha|k|epsilon)"
+    {
+        solver          PBiCGStab;
+        preconditioner  DILU;
+        tolerance       1e-8;
+        relTol          0.001;
+    }
+
+    "(U|ha|k|epsilon)Final"
+    {
+        $U;
+        tolerance       1e-8;
+        relTol          0;
+    }
+
+    "Yi"
+    {
+        solver          PBiCGStab;
+        preconditioner  DILU;
+        tolerance       1e-8;
+        relTol          0.001;
+    }
+    "YiFinal"
+    {
+        solver          PBiCGStab;
+        preconditioner  DILU;
+        tolerance       1e-8;
+        relTol          0;
+    }
+
+
+
 
     rho
     {
@@ -140,72 +150,72 @@ solvers
         relTol          0;
     }
 
-    p_rgh
-    {
-        solver          PCG;
-        preconditioner
-        {
-            preconditioner  GAMG;
-            tolerance       1e-08;
-            relTol          0.01;
-            nVcycles        2;
-            smoother        DICGaussSeidel;
-            nPreSweeps      2;
-        }
-        tolerance       1e-08;
-        relTol          0.01;
-         maxIter         100;
-    }
+    // p_rgh
+    // {
+    //     solver          PCG;
+    //     preconditioner
+    //     {
+    //         preconditioner  GAMG;
+    //         tolerance       1e-08;
+    //         relTol          0.01;
+    //         nVcycles        2;
+    //         smoother        DICGaussSeidel;
+    //         nPreSweeps      2;
+    //     }
+    //     tolerance       1e-08;
+    //     relTol          0.01;
+    //      maxIter         100;
+    // }
 
-    p_rghFinal
-    {
-        solver          PCG;
-        preconditioner
-        {
-            preconditioner  GAMG;
-            tolerance       2e-09;
-            relTol          0;
-            nVcycles        2;
-            smoother        DICGaussSeidel;
-            nPreSweeps      2;
-        }
+    // p_rghFinal
+    // {
+    //     solver          PCG;
+    //     preconditioner
+    //     {
+    //         preconditioner  GAMG;
+    //         tolerance       2e-09;
+    //         relTol          0;
+    //         nVcycles        2;
+    //         smoother        DICGaussSeidel;
+    //         nPreSweeps      2;
+    //     }
 
-        tolerance       1e-09;
-        relTol          0;
-        maxIter         100;
-    }
-
-
-    "(U|k|epsilon)"
-    {
-        solver          smoothSolver;
-        smoother        symGaussSeidel;
-        tolerance       1e-08;
-        relTol          0;
-    }
-
-    "(U|k|epsilon)Final"
-    {
-        $U;
-        tolerance       1e-09;
-        relTol          0;
-    }
+    //     tolerance       1e-09;
+    //     relTol          0;
+    //     maxIter         100;
+    // }
 
 
-    "(he|ha|h|e|Yi)"
-    {
-        solver          PBiCGStab;
-        preconditioner  DILU;
-        tolerance       1e-08;
-        relTol          0;
-    }
+    // "(U|k|epsilon)"
+    // {
+    //     solver          smoothSolver;
+    //     smoother        symGaussSeidel;
+    //     tolerance       1e-08;
+    //     relTol          0;
+    // }
 
-    "(he|ha|h|e|Yi)Final"
-    {
-        $he;
-        tolerance       1e-09;
-        relTol          0;
-    }
+    // "(U|k|epsilon)Final"
+    // {
+    //     $U;
+    //     tolerance       1e-09;
+    //     relTol          0;
+    // }
+
+
+    // "(he|ha|h|e|Yi)"
+    // {
+    //     solver          PBiCGStab;
+    //     preconditioner  DILU;
+    //     tolerance       1e-08;
+    //     relTol          0;
+    // }
+
+    // "(he|ha|h|e|Yi)Final"
+    // {
+    //     $he;
+    //     tolerance       1e-09;
+    //     relTol          0;
+    // }
 }
 
 PIMPLE

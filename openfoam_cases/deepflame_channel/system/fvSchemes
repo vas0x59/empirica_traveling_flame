@@ -18,7 +18,7 @@ FoamFile
 ddtSchemes
 {
     default          Euler; // CrankNicolson 0.2
-    //default           CrankNicolson 0.2; // CrankNicolson 0.2
+    // default           CrankNicolson 0.2; // CrankNicolson 0.2
 }
 
 gradSchemes
@@ -30,41 +30,41 @@ divSchemes
 {
     default             none;
 
-    div(phi,U)      Gauss limitedLinearV 1;
-    div(phi,Yi)         Gauss limitedLinear01 1;
-    div(phi,h)          Gauss limitedLinear 1;
-    div(phi,ha)          Gauss limitedLinear 1;
-    div(phi,K)          Gauss limitedLinear 1;
-    div(phid,p)         Gauss limitedLinear 1;
-    div(phi,epsilon)    Gauss limitedLinear 1;
-    div(phi,Yi_h)       Gauss limitedLinear01 1;
-    div(phi,k)          Gauss limitedLinear 1;
-    div(hDiffCorrFlux)             Gauss cubic;
-    div(((rho*nuEff)*dev2(T(grad(U)))))     Gauss linear;
-
-    // div(phi,U)      Gauss cubic;
-    // div(phi,Yi)         Gauss limitedCubic 1;
-    // div(phi,h)          Gauss cubic;
-    // div(phi,ha)          Gauss cubic;
-    // div(phi,K)          Gauss cubic;
-    // div(phid,p)         Gauss cubic;
-    // div(phi,epsilon)    Gauss cubic     ;
-    // div(phi,Yi_h)       Gauss limitedCubic 1;
-    // div(phi,k)          Gauss cubic;
+    // div(phi,U)      Gauss limitedLinearV 1;
+    // div(phi,Yi)         Gauss limitedLinear01 1;
+    // div(phi,h)          Gauss limitedLinear 1;
+    // div(phi,ha)          Gauss limitedLinear 1;
+    // div(phi,K)          Gauss limitedLinear 1;
+    // div(phid,p)         Gauss limitedLinear 1;
+    // div(phi,epsilon)    Gauss limitedLinear 1;
+    // div(phi,Yi_h)       Gauss limitedLinear01 1;
+    // div(phi,k)          Gauss limitedLinear 1;
     // div(hDiffCorrFlux)             Gauss cubic;
-    // div(((rho*nuEff)*dev2(T(grad(U)))))     Gauss cubic;
+    // div(((rho*nuEff)*dev2(T(grad(U)))))     Gauss linear;
+
+    div(phi,U)      Gauss cubic;
+    div(phi,Yi)         Gauss limitedCubic 1;
+    div(phi,h)          Gauss cubic;
+    div(phi,ha)          Gauss cubic;
+    div(phi,K)          Gauss cubic;
+    div(phid,p)         Gauss cubic;
+    div(phi,epsilon)    Gauss cubic     ;
+    div(phi,Yi_h)       Gauss limitedCubic 1;
+    div(phi,k)          Gauss cubic;
+    div(hDiffCorrFlux)             Gauss cubic;
+    div(((rho*nuEff)*dev2(T(grad(U)))))     Gauss cubic;
 }
 
 laplacianSchemes
 {
-    // default         Gauss cubic orthogonal;
-    default         Gauss linear corrected;
+    default         Gauss cubic corrected;
+    // default         Gauss linear corrected;
 }
 
 interpolationSchemes
 {
-    // default         cubic;
-    default         linear;
+    default         cubic;
+    // default         linear;
 }
 
 snGradSchemes
