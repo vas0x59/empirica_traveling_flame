@@ -20,23 +20,29 @@ internalField   uniform 1e5;
 
 boundaryField
 {
-    in {
+    // X0
+    // {
+    //     type            zeroGradient;
+    // //     type            inletOutlet;
+    // //     inletValue      $internalField;
+    // //     value           $internalField;
+    // }
+    XL
+    {
+        // type            zeroGradient;
+        type            advective;
         // type totalPressure;
-        // p0  $internalField;
-        type            inletOutlet;
-        inletValue      $internalField;
-        value           $internalField;
-    }
-    out {
-        // type totalPressure;
-        // p0  $internalField;
-        type            inletOutlet;
-        inletValue      $internalField;
-        value           $internalField;
+        // p0              uniform 100000;
+        // inletValue      $internalField;
+        // value           $internalField;
     }
     border {
         type zeroGradient;
         // p0  $internalField;
+    }
+    "(sym).*"
+    {
+        type            symmetryPlane;
     }
 }
 

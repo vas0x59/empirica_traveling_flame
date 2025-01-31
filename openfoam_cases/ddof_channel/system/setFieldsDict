@@ -1,0 +1,75 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      setFieldsDict;
+version 2.0;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+defaultFieldValues
+(
+    // volScalarFieldValue p 1e5
+    // volScalarFieldValue T 300
+    // volScalarFieldValue N2 0.651
+    // volScalarFieldValue CH4 0.07
+    // volScalarFieldValue O2 0.279
+
+
+    // volScalarFieldValue CO2 0.0
+    // volScalarFieldValue H2O 0.0
+    
+
+);
+
+regions
+(
+    sphereToCell
+    // boxToCell
+    {
+        // box (-0.2 -0.02 -0.02) (0.001 0.02 0.02);
+        // sphereToCell {
+            centre (0.0 0.0 0.005);
+            radius 0.004;
+            fieldValues
+            (
+                // volScalarFieldValue p 1e5
+                
+                // volScalarFieldValue CH4 0
+                // volScalarFieldValue O2 0
+
+                // volScalarFieldValue CO2 0.35
+                // volScalarFieldValue H2O 0.30
+
+
+                volScalarFieldValue T 2000
+            );
+        // }
+    }
+    sphereToCell
+    // boxToCell
+    {
+        // box (-0.2 -0.02 -0.02) (0.001 0.02 0.02);
+        // sphereToCell {
+            centre (0.0 0.0 0.005);
+            radius 0.004;
+            fieldValues
+            (
+                // volScalarFieldValue p 1e5
+                
+                // volScalarFieldValue CH4 0
+                // volScalarFieldValue O2 0
+
+                volScalarFieldValue N2 0.7
+                volScalarFieldValue CO2 0.12
+                volScalarFieldValue O2 0.1
+                volScalarFieldValue H2O 0.08
+                volScalarFieldValue C2H5OH 0
+
+
+                // volScalarFieldValue T 2000
+            );
+        // }
+    }
+);

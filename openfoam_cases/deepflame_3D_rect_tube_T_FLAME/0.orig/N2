@@ -20,20 +20,28 @@ internalField   uniform 0.651;
 
 boundaryField
 {
-    in
-    {
-        type            fixedValue;
-        value           $internalField;
-    }
-    out
+    // X0
+    // {
+    //     type            inletOutlet;
+    //     inletValue      $internalField;
+    //     value           $internalField;
+    // }
+    XL
     {
         type            inletOutlet;
         inletValue      $internalField;
         value           $internalField;
     }
+
     border
     {
         type            zeroGradient;
+    }
+
+
+    "(sym).*"
+    {
+        type            symmetryPlane;
     }
 }
 

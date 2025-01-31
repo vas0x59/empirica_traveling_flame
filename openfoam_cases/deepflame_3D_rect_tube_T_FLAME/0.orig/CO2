@@ -20,9 +20,17 @@ internalField   uniform 0.0;
 
 boundaryField
 {
-    in
+    // X0 
+    // {
+    //     type            inletOutlet;
+    //     inletValue      uniform 0.00;
+    //     value           uniform 0.00;
+    // }
+
+    XL
     {
-        type            fixedValue;
+        type            inletOutlet;
+        inletValue      uniform 0.0;
         value           uniform 0.0;
     }
 
@@ -32,11 +40,9 @@ boundaryField
         // value           uniform 0.0;
     }
 
-    out
+    "(sym).*"
     {
-        type            inletOutlet;
-        inletValue      uniform 0.0;
-        value           uniform 0.0;
+        type            symmetryPlane;
     }
 
 }
