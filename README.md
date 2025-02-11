@@ -130,3 +130,39 @@ $$
 \rho u \frac{\partial Y_k}{\partial z} = - \frac{\partial j_k}{\partial z}
     % + W_k \dot{\omega}_k
 $$
+
+
+
+
+
+# _________
+
+$$\
+Le = \frac{\alpha}{D} = \frac{\lambda}{\rho  c_p D} \text{\: --\: число Льюиса}
+
+$$
+
+
+$$
+
+\rho u c_p  \frac{d T}{ d x} = \frac{d}{dx} \lambda \frac{dT}{dx} + \omega (T, Y_F, Y_O) Q \text{\: --\: з. с. э.}
+
+$$
+
+
+
+$$
+\rho u = \rho_{u} s_L \text{\: --\: з. с. м.}
+$$
+
+$$
+s_L  \text{\: --\: нормальная скорость пламени}
+$$
+
+
+
+$$
+
+w()
+$$
+
