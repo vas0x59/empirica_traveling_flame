@@ -1,10 +1,9 @@
 *~lock*
 .vscode
-utils/etf_field_init/Make/linux64GccDPInt32Opt/etf_field_init.C.dep
-utils/etf_field_init/Make/linux64GccDPInt32Opt/etf_field_init.o
-utils/etf_field_init/Make/linux64GccDPInt32Opt/options
-utils/etf_field_init/Make/linux64GccDPInt32Opt/sourceFiles
-utils/etf_field_init/Make/linux64GccDPInt32Opt/variables
+*linux64GccDPInt32Opt*
+
 *.zip
-utils/etf_field_init/Make/linux64GccDPInt32Opt/files
 openfoam_cases/unpacked_zips/*
+*.idea
+*cmake-build-*
+*build*

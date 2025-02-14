@@ -20,8 +20,8 @@ actions
         type    cellSet;
         action  new;
         source  sphereToCell;
-        centre  (0.01 0.00 0.01);
-        radius  0.005;
+        centre  (0.005 0.00 0.005);
+        radius  0.0025;
     }
 
     {

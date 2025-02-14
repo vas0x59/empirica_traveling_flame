@@ -21,7 +21,7 @@ cd ${0%/*} || exit 1    # Run from this directory
 cp -r 0.orig/ 0/
 runApplication blockMesh
 runApplication topoSet
-# runApplication etf_field_init
+runApplication etf_field_init_xi
 # runApplication setFields
 # runApplication etf_field_init
 runApplication decomposePar

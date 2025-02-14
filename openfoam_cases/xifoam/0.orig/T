@@ -47,7 +47,7 @@ boundaryField
         h uniform 25;
         Ta constant 300;
         thicknessLayers (0.003); // orgsteklo
-        kappaLayers     (2.3);
+        kappaLayers     (0.3);
         value           uniform 300;
     }
     border_liquid

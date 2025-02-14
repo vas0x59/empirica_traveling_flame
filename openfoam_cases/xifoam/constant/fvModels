@@ -23,7 +23,7 @@ ignition
 
     start           0.00;
     duration        0.001;
-    strength        1;
+    strength        2;
 
     XiCorr
     {
