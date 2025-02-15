@@ -16,7 +16,7 @@ FoamFile
 
 dimensions      [1 -1 -1 0 0 0 0];
 
-internalField   uniform 0.85;
+internalField   uniform 0.0;
 
 boundaryField
 {
@@ -30,13 +30,13 @@ boundaryField
     top {
         type            calculated;
         value           uniform 0;
-        Prt             0.85;
+        Prt             0.0;
     }
     XL
     {
         type            calculated;
         value           uniform 0;
-        Prt             0.85;
+        Prt             0.0;
     }
 
     "(border).*"

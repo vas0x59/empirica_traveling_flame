@@ -26,15 +26,16 @@ laminarFlameSpeed
         // fuel            IsoOctane;
         fuel            Ethanol;
 
-           Ethanol // v1
-            { 
-                W               0.46906079762832564; 
-                eta             -0.44277225238554313; 
-                xi              5.938547107856816; 
-                alpha           2.320730242790865; 
-                beta            -0.7299082945605438; 
-                f               2.3; // Constant, see Gulders article for documentation 
-            } 
+        Ethanol
+        { 
+            W               0.46949109232417996; 
+            eta             -0.4423699808522842; 
+            xi              5.93581288338703; 
+            alpha           2.4448987792885952; 
+            beta            -0.5734898748617275; 
+            f               2.3; // Constant, see Gulders article for documentation 
+        } 
+
 
         // equivalenceRatio 1;
 

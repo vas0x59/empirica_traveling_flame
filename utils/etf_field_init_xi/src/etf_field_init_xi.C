@@ -35,7 +35,7 @@ struct Ys_t {
 // double Y_air_O2 = 0.233;
 double Y_liquid_fuel = 0.085;
 
-double fuel_Z_0 = 0.048;
+double fuel_Z_0 = 0.045;
 
 Ys_t calc_Ys(double z, double maxZ) {
     double t = min(1, max(1 - (z / maxZ), 0));
@@ -48,10 +48,24 @@ Ys_t calc_Ys(double z, double maxZ) {
 }
 
 int main(int argc, char *argv[]) {
+    // if (argc == 2) {
+    //     // Y_liquid_fuel = atof(argv[1]);
+    //     fuel_Z_0 = atof(argv[1]);
+    // }
+    argList::validArgs.append("fZ");
+    //  argList::addOption
+    // (
+    //     "fuel_Z_0",
+    //     "double"
+    // );
+    
+
     // Initialize OpenFOAM
 #include "setRootCase.H"
 #include "createTime.H"
 #include "createMesh.H"
+    fuel_Z_0 =  args.argRead<double>(1);
+    std::cout << "Y_liquid_fuel: " << Y_liquid_fuel << " fuel_Z_0: " << fuel_Z_0 << std::endl;
 
 
     volScalarField ft_field
