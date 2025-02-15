@@ -7,3 +7,5 @@ openfoam_cases/unpacked_zips/*
 *.idea
 *cmake-build-*
 *build*
+data_exp
+videos/14feb/DCIM/test_path
