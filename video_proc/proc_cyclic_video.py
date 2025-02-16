@@ -62,7 +62,7 @@ if len(sys.argv) < 2:
 
 cap = cv2.VideoCapture(video_path)
 
-canvas_size = (500, 500, 3)
+
 _, canvas = cap.read()
 if not cap.isOpened():
     print("Error: Could not open video.")
@@ -90,5 +90,76 @@ cap.release()
 cv2.destroyAllWindows()
 
 pickle.dump((circle_center, radius), open(video_path + ".cricle.pickle", "wb"))
+
+
+
+cap = cv2.VideoCapture(video_path)
+
+_, img = cap.read()
+N = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) -2)
+print("N", N)
+
+# DG = 1
+CNT = 300
+phis = np.linspace(0, 360, CNT)
+
+for phi_deg in phis:
+    p_rad = np.deg2rad(phi_deg)
+    cv2.line(img, circle_center, tuple((np.array(circle_center) + radius*np.array([np.cos(p_rad), np.sin(p_rad)])).astype(np.int32))
+             , (0, int(255 - 255*phi_deg/360), int(255*phi_deg/360)), 2)
+
+cv2.imshow("lines", img)
+cv2.waitKey(0)
+
+xx, yy = np.meshgrid(np.arange(0, img.shape[1]), np.arange(0, img.shape[0]))
+xx_s = xx - circle_center[0]
+yy_s = yy - circle_center[1]
+
+dist = np.abs(np.sqrt(np.power(xx_s, 2) + np.power(yy_s, 2)) - radius)
+phi = np.rad2deg(np.arctan2(yy_s, -xx_s)) +180
+
+phi_i = np.clip(np.round(phi * (CNT-1) / 360).astype(np.int32), 0, CNT-1)
+
+
+cv2.imshow("dist", (dist/ np.max(dist)).astype(np.float32))
+cv2.imshow("phi", (phi / 360).astype(np.float32))
+cv2.imshow("phi_i", (phi_i / 360).astype(np.float32))
+
+
+mask = dist < 10
+
+polar_img_max = np.zeros((N, CNT), np.float32)
+polar_img_cnt = np.zeros((N, CNT), np.int32)
+polar_img_sum = np.zeros((N, CNT), np.float32)
+
+def scale(i):
+    out = i - np.min(i); out /= np.max(out)
+    return out
+
+for jj in range(0, N):
+    _, img = cap.read()
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY).astype(np.float32) / 255.
+
+    for i, v in zip(phi_i[mask], gray[mask]):
+        # print(i, v)
+        polar_img_max[jj, i] = max(v, polar_img_max[jj, i])
+        # polar_img_cnt[jj, i] += 1
+        # polar_img_sum[jj, i] += v
+    cv2.imshow("polar_img_max", scale(polar_img_max))
+    cv2.waitKey(1)
+# polar_img_mean = polar_img_sum/polar_img_cnt
+# cv2.imshow("polar_img_mean", scale(polar_img_mean))
+# cv2.imshow("polar_img_cnt", scale(polar_img_cnt))
+# cv2.waitKey(1)
+
+cap.release()
+
+
+cv2.waitKey(0)
+
+np.save(open(video_path + ".i_t_phi.npy", "wb"), polar_img_max)
+
+
+
 
 
