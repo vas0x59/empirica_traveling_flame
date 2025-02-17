@@ -1,0 +1,73 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2406                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    // X0
+    // {
+    //     type            pressureInletOutletVelocity;
+    //     value           $internalField;
+    // }
+
+    top
+    {
+        // type            zeroGradient;
+        // // value           $internalField;
+        type            pressureInletOutletVelocity;
+        value           $internalField;
+    }
+    XL
+    {
+        // type            zeroGradient;
+        // // value           $internalField;
+
+        type            pressureInletOutletVelocity;
+        value           $internalField;
+    }
+
+    "(border).*"
+    {
+        type            noSlip;
+        // type            noSlip;
+    }
+    border_0
+    {
+        // type            zeroGradient;
+
+        type            pressureInletOutletVelocity;
+        value           $internalField;
+        // type            noSlip;
+        // type            pressureInletOutletVelocity;
+        // value           $internalField;
+    }
+    // border_liquid
+    // {
+    //     // type            zeroGradient;
+    //     // type            noSlip;
+    //     type            noSlip;
+    // }
+    "(sym).*"
+    {
+        type            symmetryPlane;
+    }
+}
+
+
+// ************************************************************************* //

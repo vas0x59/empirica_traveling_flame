@@ -159,10 +159,54 @@ $$
 s_L  \text{\: --\: нормальная скорость пламени}
 $$
 
+### Кринж модель
+
 
 
 $$
 
-w()
+\rho_u  \Delta T c \: S  dx \sim \frac{\Delta T}{l} \lambda \: S dt  \:,\: \: s_L = \frac{dx}{dt}
+
+$$
+
+
+$$
+\rho_u c s_L \sim \frac{\lambda}{l}
+$$
+
+
+$$
+\Delta T c \rho_b = \dot Q \Delta t \:,\: \:  \Delta t = \frac{l}{s_L}
+$$
+
+$$
+l = \frac{\Delta T c  \rho_b }{\dot Q} s_L
+$$
+
+$$
+s_L \sim \sqrt{\frac{\lambda}{\Delta T \rho_b \rho_u c^2} \dot Q  }
+$$
+
+$$
+\dot Q = w q \:, \: \: w = B {Y_F}^\alpha {Y_O}^\beta \exp(-T_a / T_r)  \left( \frac{\rho_b}{W_F}\right)^\alpha  \left( \frac{\rho_b}{W_O}\right)^\beta
+$$
+
+
+$$
+\Delta T = Y_F \frac{q}{W_F c} \: \: \: \:
+T_r = \Delta T/2 + T_0
+
+
+$$
+
+
+$$
+
+$$
+
+### one step 
+
+$$
+\text{C}_2 \text{H}_5 \text{O} \text{H} + 3\text{O}_2 \rightarrow 2 \text{CO}_2 + 3 \text{H}_2 \text{O} 
 $$
 
